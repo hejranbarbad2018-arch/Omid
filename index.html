@@ -3,34 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Personal Exchange System</title>
 
 <style>
 body{
-    font-family: Arial;
-    background:#f2f2f2;
+    font-family: Arial, sans-serif;
+    background:#f1f5f9;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
 }
-.login{
+
+.login-box{
     background:white;
-    padding:30px;
-    border-radius:10px;
-    width:300px;
-    box-shadow:0 0 10px #aaa;
+    width:320px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px #bbb;
+    text-align:center;
 }
-input,button{
-    width:100%;
-    padding:10px;
-    margin:8px 0;
+
+h2{
+    color:#0066cc;
 }
+
+input{
+    width:90%;
+    padding:12px;
+    margin:8px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
 button{
-    background:#007bff;
+    width:95%;
+    padding:12px;
+    background:#0066cc;
     color:white;
-    border:0;
+    border:none;
+    border-radius:6px;
     cursor:pointer;
+}
+
+button:hover{
+    background:#004999;
+}
+
+#msg{
+    color:red;
 }
 </style>
 
@@ -38,13 +60,15 @@ button{
 
 <body>
 
-<div class="login">
+<div class="login-box">
+
 <h2>د صرافۍ سیستم</h2>
 
 <input id="user" placeholder="Username">
+
 <input id="pass" type="password" placeholder="Password">
 
-<button onclick="login()">Login</button>
+<button onclick="login()">ننوتل</button>
 
 <p id="msg"></p>
 
@@ -52,20 +76,28 @@ button{
 
 
 <script>
+
 function login(){
 
 let user=document.getElementById("user").value;
 let pass=document.getElementById("pass").value;
 
+
 if(user=="admin" && pass=="12345"){
-window.location="dashboard.html";
+
+window.location.href="dashboard.html";
+
 }
 else{
-document.getElementById("msg").innerHTML="معلومات غلط دي";
+
+document.getElementById("msg").innerHTML="نوم یا پاسورډ غلط دی";
+
 }
 
 }
+
 </script>
+
 
 </body>
 </html>
