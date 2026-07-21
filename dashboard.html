@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ps">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exchange Dashboard</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f5f5f5;
+    padding:20px;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px;
+    background:#008000;
+    color:white;
+    border:0;
+    border-radius:5px;
+}
+
+input{
+    padding:10px;
+    margin:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>د صرافۍ مدیریت</h2>
+
+<div class="box">
+
+<h3>نوی مشتری ثبتول</h3>
+
+<input id="name" placeholder="د مشتری نوم">
+<input id="phone" placeholder="موبایل نمبر">
+
+<button onclick="addCustomer()">ثبت</button>
+
+</div>
+
+
+<div class="box">
+
+<h3>مشتریان</h3>
+
+<ul id="customers"></ul>
+
+</div>
+
+
+<script>
+
+function addCustomer(){
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+
+
+let li=document.createElement("li");
+
+li.innerHTML=
+name+" - "+phone+
+" | AFN: 0 | USD: 0 | PKR: 0 | EUR: 0";
+
+
+document.getElementById("customers").appendChild(li);
+
+
+}
+
+</script>
+
+
+</body>
+</html>
